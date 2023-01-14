@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <title>オリジナルカレンダー作成ツール</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 id="site_title">オリジナルカレンダー作成ツール</h1>
+      <div class="menu">
+        <div id="target_yearmonth">
+          <label>対象年月：</label>
+          <input type="month" id="yearmonth" name="yearmonth" />
+        </div>
+        <div class="choice">
+          <label>挿入画像：</label>
+          <input type="file" name="file" id="file" />
+        </div>
+        <div class="choice">
+          <label>背景色：</label>
+          <input type="color" id="bg_color" value="#ffffff" />
+        </div>
+      <div class="choice">
+        <input
+          id="download-btn"
+          type="button"
+          onclick="doenloadImage()"
+          value="プレビューを保存"
+        />
+      </div>
+      </div>
+      <!-- xxxx年xx月を表示 -->
+      <div id="next-prev-button">
+        <button id="prev">‹</button>
+        <h1 id="header"></h1>
+        <button id="next">›</button>
+      </div>
+      <!-- <div id="radio">
+        <label
+          ><input type="radio" name="type" value="year" />年間カレンダー</label
+        >
+        <label
+          ><input type="radio" name="type" value="month" checked />月間カレンダー</label
+        >
+      </div> -->
+      <div id="preview">
+        <p id="preview-text">プレビュー（枠線は含まれません）</p>
+        <canvas id="canvas"></canvas>
+        <!-- カレンダー -->
+        <div id="calendar"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./js/canvas.js"></script>
+  </body>
+</html>
