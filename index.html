@@ -26,14 +26,20 @@
           <label>背景色：</label>
           <input type="color" id="bg_color" value="#ffffff" />
         </div>
-      <div class="choice">
+        <div class="choice">
+          <input
+            id="download-btn"
+            type="button"
+            onclick="doenloadImage()"
+            value="プレビューを保存"
+          />
+        </div>
         <input
-          id="download-btn"
           type="button"
-          onclick="doenloadImage()"
-          value="プレビューを保存"
+          id="change-btn"
+          value="画像に変換"
+          onclick="chgImg()"
         />
-      </div>
       </div>
       <!-- xxxx年xx月を表示 -->
       <div id="next-prev-button">
@@ -50,6 +56,10 @@
         >
       </div> -->
       <div id="preview">
+        <div>
+          <p id="sp_save">枠内を長押しして保存してください</p>
+          <img id="newImg" />
+        </div>
         <p id="preview-text">プレビュー（枠線は含まれません）</p>
         <canvas id="canvas"></canvas>
         <!-- カレンダー -->

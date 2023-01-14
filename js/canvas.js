@@ -88,16 +88,20 @@ function canvasDraw(imgSrc) {
 
 function doenloadImage() {
   // canvasを画像に変換
-  var data = canvas.toDataURL();
+  var data = canvas.toDataURL("image/jpeg", 1);
   // DL時のファイル名
   var file_name = document.querySelector("#yearmonth").value + ".jpg";
   // 画像として出力
-  var outputImg = document.createElement("a");
-  outputImg.href = data;
-  // outputImg.href = canvas.toDataURL("image/png");
-  outputImg.download = file_name;
-  outputImg.click();
-  // document.getElementById("result").appendChild(outputImg);
+  if (canvas.msToBlob) {
+    //IE対応
+    var blob = toBlob(data);
+    window.navigator.msSaveBlob(blob, file_name);
+  } else {
+    var outputImg = document.createElement("a");
+    outputImg.href = data;
+    outputImg.download = file_name;
+    outputImg.click();
+  }
 }
 
 // 背景色を変更
@@ -160,3 +164,24 @@ document.getElementById("yearmonth").addEventListener("input", function () {
 document.getElementById("bg_color").addEventListener("change", function () {
   canvasDraw();
 });
+
+// スマホか判定する
+function isSmartPhone() {
+  if (
+    window.matchMedia &&
+    window.matchMedia("(max-device-width: 640px)").matches
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function chgImg() {
+  var png = canvas.toDataURL();
+  document.getElementById("sp_save").style.display = "block";
+  newImg = document.getElementById("newImg");
+  newImg.style.display = "block";
+  newImg.width = 360;
+  newImg.height = 780;
+  newImg.src = png;
+}

@@ -14,7 +14,7 @@
   margin: 1rem;
 }
 
-.menu{
+.menu {
   margin-top: 1rem;
   padding: 1rem;
   background-color: rgb(250, 255, 174);
@@ -63,7 +63,12 @@
 
 #preview {
   margin: 1rem 120px;
+}
 
+@media screen and (max-width: 480px) {
+  #preview {
+    margin: 1rem 0.5rem;
+  }
 }
 
 #upload {
@@ -73,6 +78,30 @@
 #download-btn {
   margin-top: 10px;
   margin-left: 70%;
+}
+
+#change-btn {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  #download-btn {
+    display: none;
+  }
+
+  #change-btn {
+    display: block;
+    margin-top: 10px;
+    margin-left: 70%;
+  }
+}
+#sp_save {
+  display: none;
+}
+#newImg {
+  display: none;
+  outline: 2px solid rgb(205, 205, 205);
+  margin-top: 1rem;
 }
 
 #canvas {
