@@ -16,7 +16,7 @@ window.onload = function () {
     let yearmonth = document.getElementById("yearmonth").value;
     const year = yearmonth.split("-")[0];
     const month = Number(yearmonth.split("-")[1]) - 1;
-    document.querySelector("#header").innerHTML = month + 1 + "月";
+    document.querySelector("#header").innerHTML = year + "年" + month + 1 + "月";
 
     var calendar = createProcess(year, month);
     document.querySelector("#calendar").innerHTML = calendar;
@@ -45,7 +45,7 @@ function next() {
 function showProcess(date) {
   var year = date.getFullYear();
   var month = date.getMonth();
-  document.querySelector("#header").innerHTML = month + 1 + "月";
+  document.querySelector("#header").innerHTML = year + "年" + month + 1 + "月";
 
   var calendar = createProcess(year, month);
   document.querySelector("#calendar").innerHTML = calendar;

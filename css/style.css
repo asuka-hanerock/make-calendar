@@ -24,11 +24,50 @@
   margin: 1rem 0;
 }
 
+@media screen and (max-width: 480px) {
+  .sp_flex {
+    margin-top: 1rem;
+    display: flex;
+  }
+
+  .choice {
+    width: 50%;
+    margin: 0;
+  }
+
+  .choice label {
+    font-size: 0.8rem;
+  }
+
+  /* #file {
+    display: none;
+  } */
+
+  .file-btn {
+    background-color: aliceblue;
+    text-decoration: none;
+    padding: 0.1rem 0.3rem;
+  }
+}
+
+#yearmonth {
+  display: none;
+}
+
+
 #header {
   text-align: center;
   font-size: 24px;
-  width: 100%;
+  width: 80%;
   margin: 1rem 0 0;
+}
+
+@media screen and (max-width: 480px) {
+  #header {
+    margin-top: 1rem;
+    font-size: 16px;
+    width: 50%;
+  }
 }
 
 /*ボタン*/
@@ -46,6 +85,13 @@
   font-size: 1rem;
   padding: 0.5rem 2rem;
   margin: 1rem 0;
+}
+
+@media screen and (max-width: 480px) {
+  #next-prev-button button {
+    padding: 0.25rem 1rem;
+    margin: 0.5rem 0;
+  }
 }
 
 #next-prev-button button:hover {
@@ -67,7 +113,7 @@
 
 @media screen and (max-width: 480px) {
   #preview {
-    margin: 1rem 0.5rem;
+    margin: 0.5rem;
   }
 }
 
@@ -95,9 +141,11 @@
     margin-left: 70%;
   }
 }
+
 #sp_save {
   display: none;
 }
+
 #newImg {
   display: none;
   outline: 2px solid rgb(205, 205, 205);

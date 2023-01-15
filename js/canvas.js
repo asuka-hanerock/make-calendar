@@ -134,11 +134,13 @@ function addCalendar() {
       }
       if ((i <= 2 && Number(ele) > 20) || (i >= 4 && Number(ele) < 8)) {
         ctx.fillStyle = "#dddddd";
-      } else if (j == 0) {
-        ctx.fillStyle = "#cc3333";
-      } else if (j == 6) {
-        ctx.fillStyle = "#3333cc";
-      } else {
+      }
+      //  else if (j == 0) {
+      //   ctx.fillStyle = "#cc3333";
+      // } else if (j == 6) {
+      //   ctx.fillStyle = "#3333cc";
+      // }
+      else {
         ctx.fillStyle = "#666666";
       }
       // カレンダー表示位置
